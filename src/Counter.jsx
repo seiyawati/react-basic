@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 
 const Counter = () => {
@@ -16,6 +17,10 @@ const Counter = () => {
   const countDown = () => {
     setCount(prevState => prevState - 1)
   }
+
+  useEffect(() => {
+    console.log("Current count is ...", count)
+  }, [count])
 
   return (
     <div>
